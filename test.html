@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<script>
+		var temp = [];
+		function num() {
+			var message = parseInt(prompt("1" + '\n' + "2" + '\n' + "3" + '\n' + "4" + '\n' + "5"));
+			switch (message) {
+				case 1:
+					alert('请输入两个数字进行加减乘除运算:');
+					for (i = 0; i < 2; i++) {
+						temp[i] = prompt('请输入第' + parseInt(i + 1) + '个数')
+					}
+					function setJiSuan(num1, num2) {
+						return [num1 + num2, num1 - num2, num1 * num2, num1 / num2];
+					}
+					var re = setJiSuan(parseInt(temp[0]), parseInt(temp[1]));
+					alert('两个数的加减乘除结果依次是:' + re);
+					num();
+				case 2:
+					alert('请输入任意两个数字比较返回最大值:');
+					for (i = 0; i < 2; i++) {
+						temp[i] = prompt('请输入第' + parseInt(i + 1) + '个数')
+					}
+					function findMax(num1, num2) {
+						return num1 < num2 ? num2 : num1;
+					}
+					var re = findMax(parseInt(temp[0]), parseInt(temp[1]));
+					alert('两个数中最大的数为:' + re);
+					num();
+				case 3:
+					alert('请输入任意三个数字比较返回最大值:');
+					for (i = 0; i < 3; i++) {
+						temp[i] = prompt('请输入第' + parseInt(i + 1) + '个数')
+					}
+					function findMax_(num1, num2, num3) {
+						var max = num1;
+						max = max < num2 ? num2 : max;
+						max = max < num3 ? num3 : max;
+						return max;
+					}
+					var re = findMax_(parseInt(temp[0]), parseInt(temp[1]), temp[2]);
+					alert('三个数中最大的数为:' + re);
+					num();
+				case 4:
+					alert('请输入任意一个数字判断是否为素数:');
+					temp = prompt('请输入任意一个数：')
+					function judge_(num) {
+						for (i = 2; i < num; i++) {
+							if (num % i == 0) {
+								return (num + '这个数不是素数')
+							}
+						}
+						return (num + '这个数是素数')
+					}
+					var re = judge_(parseInt(temp));
+					alert(re);
+					num();
+				case 5:
+					alert('退出成功');
+					break;
+				default:
+					alert('输入错误,请重新输入')
+					num();
+			}
+		}
+		num();
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
